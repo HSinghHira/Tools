@@ -1,0 +1,79 @@
+ol, ul, li {list-style:none;}
+  body {
+    font-family: Roboto,Arial,sans-serif;
+    line-height: 1.5;
+    color: #434343;
+    background-color: #f9f9f9;
+    margin: 0;
+    height: 100%;
+    font-size: 1rem;
+    font-weight: 300;
+    box-sizing: border-box;
+  }
+
+.card {
+  	background-color: #fff;
+    margin: 25px;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 14%);
+  	position: relative;
+    min-height: 1px;
+    padding: 1px;
+}
+  
+  textarea {
+    display: block;
+    width: 98%;
+    height: 200px;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #434343;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #edeeef;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+textarea {
+    overflow: auto;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+.btn {
+    display: table-row-group;
+    margin-bottom: 0;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px;
+    font-size: 16px;
+    line-height: 2;
+    border-radius: 3px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #fff;
+    background-color: #5594b9;
+    border-color: #5594b9;
+    width: 100%;
+}
+  .card-content {padding:20px;}
