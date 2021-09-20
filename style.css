@@ -72,8 +72,8 @@ button, input, optgroup, select, textarea {
     -ms-user-select: none;
     user-select: none;
     color: #fff;
-    background-color: #5594b9;
-    border-color: #5594b9;
+    background-color: #f16666;
+    border-color: #f16666;
     width: 100%;
 }
   .card-content {padding:20px;}
