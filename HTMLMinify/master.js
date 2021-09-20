@@ -18,7 +18,7 @@
     };
   })();
   if (typeof Worker === 'function') {
-    var worker = new Worker('/worker.js');
+    var worker = new Worker('/HTMLMinify/worker.js');
     worker.onmessage = function() {
       minify = function(value, options, callback, errorback) {
         worker.onmessage = function(event) {
