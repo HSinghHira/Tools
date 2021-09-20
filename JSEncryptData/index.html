@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+      
+      <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Protect your Data with JS" />
+    <title>JS Encryption Tool</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500" />
+      
+        <link rel="stylesheet" type="text/css" href="/style.css" />
+
+        <script type="text/javascript" src="/JSEncryptData/script.js"></script>
+        <script type="text/javascript" src="/JSEncryptData/main.js"></script>
+    </head>
+
+    <body onload="load()">
+        <div class="card">
+            <center><h1>Encrypt Your Data</h1></center>
+        </div>
+        <div class="card">
+            <form name="key" action="#" onsubmit="return false;">
+              	<h3>Key (Password)</h3>
+                <input class="form-control" type="text" name="text" id="passwordText" maxlength="1024" style="height: 40px;" />
+
+                <br /><br />
+                <input type="button" class="btn" value=" Random" onclick="document.key.text.value = randomPassword(8);" />
+            </form>
+        </div>
+        <div class="card">
+            <form name="plain" action="#" onsubmit="return false;">
+                <h3>Plain Text</h3>
+                <textarea class="form-control" name="text" id="plainText" rows="10"></textarea>
+
+                <br />
+                <input type="button" class="btn" name="encrypt" value=" Encrypt " onclick="encryptFormText();" />
+            </form>
+        </div>
+
+        <div class="card">
+            <form name="cipher" action="#" onsubmit="return false;">
+                <h3>Cipher Text</h3>
+
+                <textarea class="form-control" name="text" id="cipherText" rows="10"></textarea>
+            </form>
+        </div>
+        <div class="card">
+            <h3>HTML Code</h3>
+            <form name="encryptedCode" action="#" onsubmit="return false;">
+                <p align="center">
+                    <textarea class="form-control" name="text" id="codeText" rows="10" wrap="off" readonly="" onclick="this.focus(); this.select();"></textarea>
+                    <br />
+                    <input type="radio" name="codeType" value="hide" checked onclick="genSampleCode();" /> Standard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="codeType" value="show" onclick="genSampleCode();" /> Inline
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="codeType" value="show" onclick="genSampleCode();" /> ***
+                </p>
+            </form>
+        </div>
+        <div class="card">
+            <h3>HTML Test</h3>
+            <div id="encryptedTest">&nbsp;</div>
+        </div>
+    </body>
+</html>
