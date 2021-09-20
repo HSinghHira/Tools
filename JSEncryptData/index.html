@@ -21,16 +21,16 @@
         </div>
         <div class="card">
             <form name="key" action="#" onsubmit="return false;">
-              	<h3>Key (Password)</h3>
+              	<h3>Key (Password)</h3><br/><br/>
                 <input class="form-control" type="text" name="text" id="passwordText" style="height: 40px;" />
 
-                <br /><br />
+                <br/><br/>
                 <input type="button" class="btn" value=" Random" onclick="document.key.text.value = randomPassword(8);" />
             </form>
         </div>
         <div class="card">
             <form name="plain" action="#" onsubmit="return false;">
-                <h3>Plain Text</h3>
+                <h3>Plain Text</h3><br/>
                 <textarea class="form-control" name="text" id="plainText"></textarea>
 
                 <br />
@@ -40,13 +40,13 @@
 
         <div class="card">
             <form name="cipher" action="#" onsubmit="return false;">
-                <h3>Cipher Text</h3>
+                <h3>Cipher Text</h3><br/>
 
                 <textarea class="form-control" name="text" id="cipherText"></textarea>
             </form>
         </div>
         <div class="card">
-            <h3>HTML Code</h3>
+            <h3>HTML Code</h3><br/>
             <form name="encryptedCode" action="#" onsubmit="return false;">
                     <textarea class="form-control" name="text" id="codeText" wrap="off" readonly="" onclick="this.focus(); this.select();"></textarea>
                     <br />
@@ -55,7 +55,7 @@
             </form>
         </div>
         <div class="card">
-            <h3>HTML Test</h3>
+            <h3>HTML Test</h3><br/>
             <div id="encryptedTest">&nbsp;</div>
         </div>
     </body>
