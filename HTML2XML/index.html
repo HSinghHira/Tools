@@ -1,1 +1,62 @@
 
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="HTML to XML Convertor" />
+    <title>HTML to XML Convertor</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+<!-- Start Converter Tool -->
+<script type='text/javascript'>
+//<![CDATA[
+function html2entities(){
+var re=/[<>"'&]/g
+for (i=0; i<arguments.length; i++)
+arguments[i].value=arguments[i].value.replace(re, function(m){return replacechar(m)})
+}
+
+function replacechar(match){
+if (match=="<")
+return "&lt;"
+else if (match==">")
+return "&gt;"
+else if (match=="\"")
+return "&quot;"
+else if (match=="'")
+return "&#039;"
+else if (match=="&")
+return "&amp;"
+}
+//]]>
+</script>
+<script type='text/javascript'>
+
+//<![CDATA[
+
+//Character count script
+function countit(what){
+formcontent=what.form.charcount.value
+what.form.displaycount.value=formcontent.length
+}
+//]]>
+</script>
+
+ <div class="card"><center><h1>HTML to XML Convertor</h1></center></div>
+
+<div class="card">
+  <div class="card-content">
+  <form>
+<textarea class="form-control" placeholder="Paste Your Adsense Code, HTML Code, XML Code or Script Code Here..." name="data1"></textarea>
+  	<br/>
+<input name="button" type="button" class="btn" onclick="html2entities(this.form.data1)" value="Convert Now" /> 
+ </form>
+  </div></div>
+
+
+
+  </body>
+</html>
