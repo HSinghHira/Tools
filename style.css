@@ -80,3 +80,6 @@ button, input, optgroup, select, textarea {
     width:100%;
 }
 .card-content {padding:20px;}
+input[type="file"] {
+    display: none;
+}
