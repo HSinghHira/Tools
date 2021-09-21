@@ -21,9 +21,9 @@ function html2entities(){var t=/[<>"'&]/g;for(i=0;i<arguments.length;i++)argumen
 <div class="card">
   <div class="card-content">
   <form>
-<textarea class="form-control" placeholder="Paste Your Adsense Code, HTML Code, XML Code or Script Code Here..." name="data1"></textarea>
+<textarea  id="maindata" class="form-control" placeholder="Paste Your Adsense Code, HTML Code, XML Code or Script Code Here..." required></textarea>
   	<br/>
-<input name="button" type="button" class="btn" onclick="html2entities(this.form.data1)" value="Convert Now" /> 
+<center><input name="button" type="button" class="btn mainbtn" onclick="html2entities(this.form.maindata)" value="Convert Now" /> <input name="button" type="button" class="btn saveit" onclick="saveit(maindata.value,'download.txt')" value="Download" /><label class="btn loadit"><input type="file" onchange="loadit()" id="fileToLoad"/>Load File</label>  <input name="button" type="button" class="btn copyit" onclick="copyit()" value="Copy" /><input name="button" type="reset" class="btn clear" value="Clear" /></center>
  </form>
   </div></div>
 
