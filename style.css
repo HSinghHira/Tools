@@ -85,3 +85,45 @@ button, input, optgroup, select, textarea {
 input[type="file"] {
     display: none;
 }
+ .saveit {
+  background-image: url("https://1.bp.blogspot.com/-IFnW8pUkbTM/YUl808bp3xI/AAAAAAAAbMU/gls8r3VrXAolKIlrtlzoWvYATIijHqYtQCLcBGAsYHQ/s0/icons8-download-60.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+    padding: 10px 30px 10px 50px;
+    background-position-x: 20px;
+    background-position-y: 15px;
+    background-size: 20px;
+}
+  
+    .loadit {
+  background-image: url("https://1.bp.blogspot.com/-A0m3ARIzYNI/YUmOWgf6jfI/AAAAAAAAbNY/DSmVjQG6bHojU-VJNFYd2fXLPsOfjAttwCLcBGAsYHQ/s0/icons8-search-100.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+    padding: 10px 30px 10px 50px;
+    background-position-x: 20px;
+    background-position-y: 15px;
+    background-size: 20px;
+}
+
+    .copyit {
+  background-image: url("https://1.bp.blogspot.com/-e3RKdjmWk4Q/YUmD5b5wYkI/AAAAAAAAbMw/oVh-QfPHFNg2oUFk5Nzj9MMQU2iUAOh1wCLcBGAsYHQ/s0/icons8-copy-96.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+    padding: 10px 30px 10px 50px;
+    background-position-x: 20px;
+    background-position-y: 15px;
+    background-size: 20px;
+}  
+    .clear {
+  background-image: url("https://1.bp.blogspot.com/-ODuj1bHe9Nc/YUmEaMRBCHI/AAAAAAAAbM4/T5p5ZiZn2W4vP0OZHFiaw7kaN5HIDGAigCLcBGAsYHQ/s0/icons8-broom-96.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+    padding: 10px 30px 10px 50px;
+    background-position-x: 20px;
+    background-position-y: 15px;
+    background-size: 20px;
+}  
+  .mainbtn {
+    padding-left: 65px!important;
+    padding-right: 65px!important;
+  
