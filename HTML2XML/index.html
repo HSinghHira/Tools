@@ -8,41 +8,12 @@
     <title>HTML to XML Convertor</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500" />
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/script.js" />
   </head>
   <body>
 <!-- Start Converter Tool -->
 <script type='text/javascript'>
-//<![CDATA[
-function html2entities(){
-var re=/[<>"'&]/g
-for (i=0; i<arguments.length; i++)
-arguments[i].value=arguments[i].value.replace(re, function(m){return replacechar(m)})
-}
-
-function replacechar(match){
-if (match=="<")
-return "&lt;"
-else if (match==">")
-return "&gt;"
-else if (match=="\"")
-return "&quot;"
-else if (match=="'")
-return "&#039;"
-else if (match=="&")
-return "&amp;"
-}
-//]]>
-</script>
-<script type='text/javascript'>
-
-//<![CDATA[
-
-//Character count script
-function countit(what){
-formcontent=what.form.charcount.value
-what.form.displaycount.value=formcontent.length
-}
-//]]>
+function html2entities(){var t=/[<>"'&]/g;for(i=0;i<arguments.length;i++)arguments[i].value=arguments[i].value.replace(t,function(t){return replacechar(t)})}function replacechar(t){return"<"==t?"&lt;":">"==t?"&gt;":'"'==t?"&quot;":"'"==t?"&#039;":"&"==t?"&amp;":void 0}function countit(t){formcontent=t.form.charcount.value,t.form.displaycount.value=formcontent.length}
 </script>
 
  <div class="card"><center><h1>HTML to XML Convertor</h1></center></div>
