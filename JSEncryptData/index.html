@@ -2,15 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
       
-      <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Protect your Data with JS" />
-    <title>JS Encryption Tool</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500" />
-      
-        <link rel="stylesheet" type="text/css" href="/style.css" />
-
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Protect your Data with JS" />
+        <title>JS Encryption Tool</title>
+        <link rel="stylesheet" type="text/css" href="/main.css" />
         <script type="text/javascript" src="/JSEncryptData/script.js"></script>
         <script type="text/javascript" src="/JSEncryptData/main.js"></script>
     </head>
@@ -25,7 +22,7 @@
                 <input class="form-control" type="text" name="text" id="passwordText" style="height: 40px;width: 98%;" />
 
                 <br/>
-                <input type="button" class="btn" value=" Random" onclick="document.key.text.value = randomPassword(8);" />
+                <input type="button" class="btn btn-primary btn-lg" value=" Random" onclick="document.key.text.value = randomPassword(8);" />
             </form>
         </div>
         <div class="card">
@@ -34,7 +31,7 @@
                 <textarea class="form-control" name="text" id="plainText" style="width: 98%;"></textarea>
 
                 <br />
-                <input type="button" class="btn" name="encrypt" value=" Encrypt " onclick="encryptFormText();" />
+                <input type="button" class="btn btn-primary btn-lg" name="encrypt" value=" Encrypt " onclick="encryptFormText();" />
             </form>
         </div>
 
@@ -60,7 +57,12 @@
         </div>
        <div class="card">
             <h3>How to Use?</h3><br/>
-            <p>Place below codes between the <i>&lt;head&gt;</i> and <i>&lt;/head&gt;</i> tags.</p><p><i>&lt;script type="text/javascript" src="https://tools.hsinghhira.me/JSEncryptData/script.js"&gt;&lt;/script&gt;</i></p>
+            <p>Place below codes between the <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code> tags.</p>
+            <pre class="line-numbers">
+                <code class="lang-html">
+                &lt;script type="text/javascript" src="https://tools.hsinghhira.me/JSEncryptData/script.js"&gt;&lt;/script&gt;
+                </code>
+            </pre>
         </div>
     </body>
 </html>
