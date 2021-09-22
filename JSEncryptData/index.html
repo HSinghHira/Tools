@@ -16,7 +16,7 @@
         <div class="card">
             <center><h1>Encrypt Your Data</h1></center>
         </div>
-        <div class="card">
+        <div class="card"><div class="card-content">
             <form name="key" action="#" onsubmit="return false;">
               	<h3>Key (Password)</h3><br/>
                 <input class="form-control" type="text" name="text" id="passwordText" style="height: 40px;width: 98%;" />
@@ -24,8 +24,8 @@
                 <br/>
                 <input type="button" class="btn btn-primary btn-lg" value=" Random" onclick="document.key.text.value = randomPassword(8);" />
             </form>
-        </div>
-        <div class="card">
+            </div></div>
+        <div class="card"><div class="card-content">
             <form name="plain" action="#" onsubmit="return false;">
                 <h3>Plain Text</h3><br/>
                 <textarea class="form-control" name="text" id="plainText" style="width: 98%;"></textarea>
@@ -33,16 +33,16 @@
                 <br />
                 <input type="button" class="btn btn-primary btn-lg" name="encrypt" value=" Encrypt " onclick="encryptFormText();" />
             </form>
-        </div>
+            </div></div>
 
-        <div class="card">
+        <div class="card"><div class="card-content">
             <form name="cipher" action="#" onsubmit="return false;">
                 <h3>Cipher Text</h3><br/>
 
                 <textarea class="form-control" name="text" id="cipherText" style="width: 98%;height:90px;" disabled></textarea>
             </form>
-        </div>
-        <div class="card">
+            </div></div>
+        <div class="card"><div class="card-content">
             <h3>HTML Code</h3><br/>
             <form name="encryptedCode" action="#" onsubmit="return false;">
                     <textarea class="form-control" name="text" id="codeText" wrap="off" readonly="" onclick="this.focus(); this.select();" style="width: 98%;"></textarea>
@@ -50,12 +50,12 @@
                     <input type="radio" name="codeType" value="hide" checked onclick="genSampleCode();" /> Standard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="codeType" value="show" onclick="genSampleCode();" /> Inline
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="codeType" value="show" onclick="genSampleCode();" /> ***
             </form>
-        </div>
-        <div class="card">
+            </div></div>
+        <div class="card"><div class="card-content">
             <h3>HTML Test</h3><br/>
             <div id="encryptedTest" style="border: 1px solid #edeeef;padding: 20px 20px;">&nbsp;</div>
-        </div>
-       <div class="card">
+            </div></div>
+       <div class="card"><div class="card-content">
             <h3>How to Use?</h3><br/>
             <p>Place below codes between the <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code> tags.</p>
             <pre class="line-numbers">
@@ -63,6 +63,6 @@
                 &lt;script type="text/javascript" src="https://tools.hsinghhira.me/JSEncryptData/script.js"&gt;&lt;/script&gt;
                 </code>
             </pre>
-        </div>
+           </div></div>
     </body>
 </html>
