@@ -73,9 +73,16 @@ body {
 }
 
 .card {
+    position: relative;
+    display: inline-table;
+    flex-direction: column-reverse;
+    min-width: 0;
+    word-wrap: break-word;
     background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .085);
+    border-radius: .4375rem;
     margin: 25px;
-    border-radius: 3px;
     box-shadow: 0 1px 2px rgb(0 0 0 / 14%);
     position: relative;
     min-height: 1px;
