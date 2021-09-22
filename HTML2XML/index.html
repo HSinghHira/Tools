@@ -29,13 +29,13 @@
             <div class="btn-toolbar" role="toolbar" aria-label="Settings toolbar">
               <div class="btn-group me-2 mb-2" role="group" aria-label="Settings group">
                 <label class="btn btn-secondary btn-icon">
-                  <input type="file" onchange="loadit()" id="fileToLoad" />
+                  <input type="file" onchange="loadit()" id="fileToLoad" title="Load file"/>
                   <i class="ci-folder" style="margin-top:3px;"></i>
                 </label>
-                <button type="button" class="btn btn-secondary btn-icon" onclick="saveit(maindata.value,'download.txt')">
+                <button type="button" class="btn btn-secondary btn-icon" onclick="saveit(maindata.value,'download.txt')" title="Save File">
                   <i class="ci-download"></i>
                 </button>
-                <button type="button" class="btn btn-secondary btn-icon" onclick="copyit()">
+                <button type="button" class="btn btn-secondary btn-icon" onclick="copyit()" title="Copy">
                   <i class="ci-document-alt"></i>
                 </button>
               </div>
@@ -45,7 +45,7 @@
                 </button>
               </div>
               <div class="btn-group mb-2" role="group" aria-label="Delete settings">
-                <button type="reset" class="btn bg-faded-danger btn-icon">
+                <button type="reset" class="btn bg-faded-danger btn-icon" title="Delete">
                   <i class="ci-trash text-danger"></i>
                 </button>
               </div>
