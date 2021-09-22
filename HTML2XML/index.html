@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="HTML to XML Convertor" />
     <title>HTML to XML Convertor</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/main.css" />
+    <style>
+      input[type="file"] {
+      display: none;
+      }
+    </style>
     <script src="/script.js"></script>
   </head>
   <body>
@@ -23,7 +27,35 @@ function html2entities(){var t=/[<>"'&]/g;for(i=0;i<arguments.length;i++)argumen
   <form>
 <textarea  id="maindata" class="form-control" placeholder="Paste Your Adsense Code, HTML Code, XML Code or Script Code Here..." required></textarea>
   	<br/>
-<center><input name="button" type="button" class="btn mainbtn" onclick="html2entities(this.form.maindata)" value="Convert Now" /> <input name="button" type="button" class="btn saveit" onclick="saveit(maindata.value,'download.txt')" value="Download" /><label class="btn loadit"><input type="file" onchange="loadit()" id="fileToLoad"/>Load File</label>  <input name="button" type="button" class="btn copyit" onclick="copyit()" value="Copy" /><input name="button" type="reset" class="btn clear" value="Clear" /></center>
+<center>
+
+  <div class="btn-toolbar" role="toolbar" aria-label="Settings toolbar">
+  <div class="btn-group me-2 mb-2" role="group" aria-label="Settings group">
+    <label class="btn btn-secondary btn-icon">
+          <input type="file" onchange="loadit()" id="fileToLoad" /><i class="ci-folder"></i>
+        </label>
+    
+    <button type="button" class="btn btn-secondary btn-icon" onclick="saveit(maindata.value,'download.txt')">
+      <i class="ci-download"></i>
+    </button>
+    <button type="button" class="btn btn-secondary btn-icon" onclick="copyit()">
+      <i class="ci-document-alt"></i>
+    </button>
+  </div>
+  <div class="btn-group me-2 mb-2" role="group" aria-label="Apply settings">
+    <button type="button" class="btn btn-info" onclick="html2entities(this.form.maindata)">
+      <i class="ci-check me-2"></i>
+      Apply
+    </button>
+  </div>
+  <div class="btn-group mb-2" role="group" aria-label="Delete settings">
+    <button type="reset" class="btn bg-faded-danger btn-icon">
+      <i class="ci-trash text-danger"></i>
+    </button>
+  </div>
+</div>
+    
+</center>
  </form>
   </div></div>
 
