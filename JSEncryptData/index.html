@@ -14,9 +14,6 @@
             .tab-content>.active {
     display: grid;
             }
-                        .tab-content>.card {
-    display: grid!important;
-            }
         </style>
     </head>
 
@@ -107,7 +104,7 @@
          </div>
       </div>
       <div class="tab-pane fade show" id="step3" role="tabpanel">
-         <form name="encryptedCode" action="#" onsubmit="return false;">
+         <form name="encryptedCode" action="#" onsubmit="return false;" style="display: grid;">
             <div class="card">
                <div class="card-content">        
                   <b>Select Style:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="radio" name="codeType" value="hide" checked onclick="genSampleCode();" /> Standard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="codeType" value="show" onclick="genSampleCode();" /> Inline&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="codeType" value="show" onclick="genSampleCode();" /> ***
