@@ -13,60 +13,135 @@
     </head>
 
     <body onload="load()">
-        <div class="card"><div class="card-content">
-            <center><h1>Encrypt Your Data</h1></center>
-            </div></div>
-        <div class="card"><div class="card-content">
-            <form name="key" action="#" onsubmit="return false;">
-              	<h3>Key (Password)</h3><br/>
-                <input class="form-control" type="text" name="text" id="passwordText" />
-
-                <br/>
-                <input type="button" class="btn btn-primary btn-lg" value=" Random" onclick="document.key.text.value = randomPassword(8);" />
-            </form>
-            </div></div>
-        <div class="card"><div class="card-content">
-            <form name="plain" action="#" onsubmit="return false;">
-                <h3>Plain Text</h3><br/>
-                <textarea class="form-control" name="text" style="250px" id="plainText"></textarea>
-
-                <br />
-                <input type="button" class="btn btn-primary btn-lg" name="encrypt" value=" Encrypt " onclick="encryptFormText();" />
-            </form>
-            </div></div>
-
-        <div class="card"><div class="card-content">
-            <form name="cipher" action="#" onsubmit="return false;">
-                <h3>Cipher Text</h3><br/>
-
-                <textarea class="form-control" name="text" id="cipherText" disabled></textarea>
-            </form>
-            </div></div>
-        <div class="card"><div class="card-content">
-            <h3>HTML Code</h3><br/>
-            <form name="encryptedCode" action="#" onsubmit="return false;">
-                    <textarea class="form-control" name="text" id="codeText" wrap="off" readonly="" onclick="this.focus(); this.select();"></textarea>
-                    <br />
-                    <input type="radio" name="codeType" value="hide" checked onclick="genSampleCode();" /> Standard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="codeType" value="show" onclick="genSampleCode();" /> Inline
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="codeType" value="show" onclick="genSampleCode();" /> ***
-            </form>
-            </div></div>
-        <div class="card"><div class="card-content">
-            <h3>HTML Test</h3><br/>
-            <div id="encryptedTest" style="border: 1px solid #edeeef;padding: 20px 20px;">&nbsp;</div>
-            </div></div>
-       <div class="card"><div class="card-content">
-            <h3>How to Use?</h3><br/>
-            <p>Place below codes between the <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code> tags.</p>
-            <pre class="line-numbers">
-  <code class="lang-html">
-    &lt;script type=&quot;text/javascript&quot; src=&quot;https://tools.hsinghhira.me/JSEncryptData/script.js&quot;&gt;&lt;/script&gt;
-  </code>
+   <div class="card">
+      <div class="card-content">
+         <center>
+            <h1>Encrypt Your Data</h1>
+         </center>
+      </div>
+   </div>
+   <div class="card">
+      <div class="card-content">
+         <!-- Media tabs: Icon -->
+         <ul class="nav nav-tabs media-tabs nav-justified" role="tablist">
+            <li class="nav-item">
+               <a class="nav-link active" href="#step1" data-bs-toggle="tab" role="tab">
+                  <div class="d-flex align-items-center">
+                     <div class="media-tab-media"><i class="ci-locked"></i></div>
+                     <div class="ps-3">
+                        <div class="media-tab-subtitle text-muted fs-xs mb-1">First Step</div>
+                        <h6 class="media-tab-title text-nowrap mb-0">Enter Key</h6>
+                     </div>
+                  </div>
+               </a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link " href="#step2" data-bs-toggle="tab" role="tab">
+                  <div class="d-flex align-items-center">
+                     <div class="media-tab-media"><i class="ci-wallet"></i></div>
+                     <div class="ps-3">
+                        <div class="media-tab-subtitle text-muted fs-xs mb-1">Second step</div>
+                        <h6 class="media-tab-title text-nowrap mb-0">Your Data</h6>
+                     </div>
+                  </div>
+               </a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#step3"  onclick="encryptFormText();" data-bs-toggle="tab" role="tab">
+                  <div class="d-flex align-items-center">
+                     <div class="media-tab-media"><i class="ci-package"></i></div>
+                     <div class="ps-3">
+                        <div class="media-tab-subtitle text-muted fs-xs mb-1">Third step</div>
+                        <h6 class="media-tab-title text-nowrap mb-0">HTML Codes</h6>
+                     </div>
+                  </div>
+               </a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#step4" data-bs-toggle="tab" role="tab">
+                  <div class="d-flex align-items-center">
+                     <div class="media-tab-media"><i class="ci-check"></i></div>
+                     <div class="ps-3">
+                        <div class="media-tab-subtitle text-muted fs-xs mb-1">Fourth step</div>
+                        <h6 class="media-tab-title text-nowrap mb-0">Result</h6>
+                     </div>
+                  </div>
+               </a>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div class="tab-content">
+      <div class="tab-pane fade show active" id="step1" role="tabpanel">
+         <div class="card">
+            <div class="card-content">
+               <form name="key" action="#" onsubmit="return false;">
+                  <p>Enter the Key (Password) to unlock the protected data.</p>
+                  <div class="input-group">
+                     <span class="input-group-text">
+                     <i class="ci-locked"></i>
+                     </span>
+                     <input class="form-control"  name="text" id="passwordText">
+                     <button class="btn btn-primary" type="button" onclick="document.key.text.value = randomPassword(8);">Random</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <div class="tab-pane fade show" id="step2" role="tabpanel">
+         <div class="card">
+            <div class="card-content">
+               <form name="plain" action="#" onsubmit="return false;">
+                  <p>Enter the Text below that you wanted to protect &amp; proceed to next step.</p>
+                  <textarea class="form-control" name="text" style="height:250px" id="plainText"></textarea>
+               </form>
+            </div>
+         </div>
+      </div>
+      <div class="tab-pane fade show" id="step3" role="tabpanel">
+         <form name="encryptedCode" action="#" onsubmit="return false;">
+            <div class="card">
+               <div class="card-content">        
+                  <b>Select Style:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="radio" name="codeType" value="hide" checked onclick="genSampleCode();" /> Standard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="codeType" value="show" onclick="genSampleCode();" /> Inline&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="codeType" value="show" onclick="genSampleCode();" /> ***
+               </div>
+            </div>
+            <div class="card">
+               <div class="card-content">
+                  <p>Copy below HTML Codes and paste whereever you want to use it</p>
+                  <pre class="line-numbers"><code class="lang-html"><textarea class="form-control" name="text" id="codeText" wrap="off" readonly="" onclick="this.focus(); this.select();" style="border: 0px;height:100px;"></textarea></code></pre>
+               </div>
+            </div>
+         </form>
+         <div class="card">
+            <div class="card-content">
+               <p>Place below codes between the <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code> tags.</p>
+               <pre class="line-numbers">
+<code class="lang-html">&lt;script type=&quot;text/javascript&quot; src=&quot;https://tools.hsinghhira.me/JSEncryptData/script.js&quot;&gt;&lt;/script&gt;</code>
 </pre>
-           </div></div>
-      <center>
-         <p>Made with ❤️️ by <a href="https://me.hsinghhira.me" target="_blank">Harman Singh Hira</a> in 🇳🇿</p>
-      </center>
- <script type="text/javascript" src="/main.js"></script>
-    </body>
+            </div>
+         </div>
+      </div>
+      <div class="tab-pane fade show" id="step4" role="tabpanel">
+         <div class="card">
+            <div class="card-content">
+               <p>This is how it will look.</p>
+               <div id="encryptedTest" style="border: 1px solid #edeeef;padding: 20px 20px;">&nbsp;</div>
+               <br/>
+               <form name="cipher" action="#" onsubmit="return false;">
+                  <div class="input-group">
+                     <span class="input-group-text">
+                     <i class="ci-key"></i> &nbsp;&nbsp;<b>Cipher Key:</b>
+                     </span>
+                     <input type="text" class="form-control"  name="text"  id="cipherText">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+   <center>
+      <p>Made with ❤️️ by <a href="https://me.hsinghhira.me" target="_blank">Harman Singh Hira</a> in 🇳🇿</p>
+   </center>
+   <script type="text/javascript" src="/main.js"></script>
+</body>
 </html>
