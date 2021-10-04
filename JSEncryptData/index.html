@@ -88,6 +88,7 @@
                      <i class="ci-locked"></i>
                      </span>
                      <input class="form-control"  name="text" id="passwordText">
+		     <button type="button" class="btn btn-secondary btn-icon" onclick="copyit2()" title="Copy"><i class="ci-document-alt"></i></button>
                      <button class="btn btn-primary" type="button" onclick="document.key.text.value = randomPassword(8);">Random</button>
                   </div>
                </form>
@@ -150,5 +151,6 @@
    </center>
    	<script type="text/javascript" src="/main.js"></script>
 	<script type="text/javascript" src="/script.js"></script>
+	<script>function copyit2() {document.getElementById("passwordText").select(), document.execCommand("copy")}</script>
 </body>
 </html>
