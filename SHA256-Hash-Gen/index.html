@@ -1,0 +1,107 @@
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description" content="SHA256-Hash Generator" />
+      <title>SHA256-Hash Generator</title>
+      <link rel="apple-touch-icon" sizes="76x76" href="https://tools.hsinghhira.me/Favicon/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="https://tools.hsinghhira.me/Favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="https://tools.hsinghhira.me/Favicon/favicon-16x16.png">
+      <link rel="manifest" href="https://tools.hsinghhira.me/Favicon/site.webmanifest">
+      <link rel="mask-icon" href="https://tools.hsinghhira.me/Favicon/safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="msapplication-TileColor" content="#da532c">
+      <meta name="theme-color" content="#ffffff">
+      <link rel="stylesheet" href="/main.css" />
+      <script type="text/javascript" src="/script.js"></script>
+      <script type="text/javascript" src="script.js"></script>
+      <style>input[type="file"] {display: none;}</style>
+   </head>
+   <body>
+      <header class="navbar navbar-light shadow-sm">
+         <div class="container">
+            <a class="navbar-brand d-none d-lg-block order-lg-1" href="#">
+            <i class="fa fa-code mr-1"></i> SHA256-Hash Generator
+            </a>
+            <a class="navbar-brand d-lg-none me-2" href="#">
+            <i class="fa fa-code mr-1"></i> SHA256-Hash Generator
+            </a>
+            <div class="navbar-toolbar d-flex align-items-center order-lg-3">
+               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+            </div>
+            <div class="offcanvas offcanvas-end me-auto order-lg-2" id="navbarOffcanvas">
+               <div class="offcanvas-header">
+                  <h5 class="offcanvas-title">More Tools</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+               </div>
+               <div class="offcanvas-body">
+                  <ul class="navbar-nav">
+                     <li class="nav-item active"><a class="nav-link" href="https://me.hsinghhira.me/" target="_blank">Home</a></li>
+                     <script> //<![CDATA[
+                        document.write('<script src=\'https://hshfavlinks.blogspot.com/feeds/posts/default/-/Links?max-results=600&amp;alt=json-in-script&amp;callback=HSH_Widget\'><\/script>');
+                        //]]>
+                     </script>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div class="card">
+         <div class="card-content">
+            <div class="row justify-content-evenly">
+               <div class="col">
+                  <div id="copyPaste" class="">
+                     <textarea name="code" id="maindata" rows="13" class="form-control" onkeyup="calc();" onfocus="SetMsg(this, true);" onblur="SetMsg(this, false);" placeholder="Your Texts here..."></textarea><br>
+                  </div>
+               </div>
+               <div class="col">
+                  <div id="output" class="hide">
+                     <textarea class="output-code form-control" id="outdata" name="code" rows="10" readonly=""></textarea>
+                     <br>
+                     <div class="row justify-content-evenly">
+                        <div class="col">
+                           <div class="btn-toolbar" role="toolbar" aria-label="Settings toolbar">
+                              <div class="btn-group me-2 mb-2" role="group" aria-label="Settings group">
+                                 <label class="btn btn-secondary btn-icon btn-lg" title="Load file">
+                                 <input type="file" onchange="loadit()" id="fileToLoad" title="Load file">
+                                 <i class="ci-folder" style="margin-top: 3px;"></i>
+                                 </label>
+                                 <button type="button" class="btn btn-secondary btn-icon btn-lg" onclick="saveit(outdata.value,'download.txt')" title="Save File">
+                                 <i class="ci-download"></i>
+                                 </button>
+                                 <button type="button" class="btn btn-secondary btn-icon btn-lg" onclick="copyit2()" title="Copy">
+                                 <i class="ci-document-alt"></i>
+                                 </button>
+                              </div>
+                              <div class="btn-group me-2 mb-2" role="group" aria-label="Apply settings">
+                                 <button type="button" class="button btn btn-primary" onclick="return calc();"><i class="ci-check me-2"></i>Apply</button>
+                              </div>
+                              <div class="btn-group mb-2" role="group" aria-label="Delete settings">
+                                 <button type="reset" class="btn bg-faded-danger btn-icon" title="Delete">
+                                 <i class="ci-trash text-danger"></i>
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col">
+                           <div class="form-check form-switch" style="margin-top: 10px;">
+                              <input type="checkbox" name="separate_lines" id="separate_lines" checked="checked" class="form-check-input" onclick="calc();"><label class="form-check-label" for="customSwitch1">Treat each line as a separate string</label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <center>
+         <p>
+            Made with ❤️️ by <a href="https://me.hsinghhira.me" target="_blank">Harman Singh Hira</a> in 🇳🇿 © <script>document.write(CRYear);</script>
+         </p>
+      </center>
+      <script type="text/javascript" src="/main.js"></script>
+      <script type="text/javascript" src="/script.js"></script>
+   </body>
+</html>
