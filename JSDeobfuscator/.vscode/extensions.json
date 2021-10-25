@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "hookyqr.beautify",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "ms-azuretools.vscode-docker"
+  ]
+}
