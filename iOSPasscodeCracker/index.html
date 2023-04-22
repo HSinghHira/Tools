@@ -1,0 +1,114 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="iOS Passcode Cracker">
+      <link rel="apple-touch-icon" sizes="76x76" href="https://tools.hsinghhira.me/Favicon/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="https://tools.hsinghhira.me/Favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="https://tools.hsinghhira.me/Favicon/favicon-16x16.png">
+      <link rel="manifest" href="https://tools.hsinghhira.me/Favicon/site.webmanifest">
+      <link rel="mask-icon" href="https://tools.hsinghhira.me/Favicon/safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="msapplication-TileColor" content="#da532c">
+      <meta name="theme-color" content="#ffffff">
+      <title>HTML to XML Convertor</title>
+      <link rel="stylesheet" href="/main.css">
+      <style>input[type="file"] {
+            display: none;
+            }</style>
+      <script src="/script.js"></script>
+      </head>
+      <body>
+      <script type="text/javascript">function html2entities(){var t=/[<>"'&]/g;for(i=0;i<arguments.length;i++)arguments[i].value=arguments[i].value.replace(t,function(t){return replacechar(t)})}function replacechar(t){return"<"==t?"&lt;":">"==t?"&gt;":'"'==t?"&quot;":"'"==t?"&#039;":"&"==t?"&amp;":void 0}function countit(t){formcontent=t.form.charcount.value,t.form.displaycount.value=formcontent.length}</script>
+      <header class="navbar navbar-light shadow-sm">
+      <div class="container">
+      
+      <a class="navbar-brand d-none d-lg-block order-lg-1" href="https://tools.hsinghhira.me/">
+      <i class="fa fa-code mr-1"></i> iOS Passcode Cracker
+      </a>
+      <a class="navbar-brand d-lg-none me-2" href="https://tools.hsinghhira.me/">
+      <i class="fa fa-code mr-1"></i> iOS Passcode Cracker
+      </a>
+      
+      <div class="navbar-toolbar d-flex align-items-center order-lg-3">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      </div>
+      
+      <div class="offcanvas offcanvas-end me-auto order-lg-2" id="navbarOffcanvas">
+      <div class="offcanvas-header">
+      <h5 class="offcanvas-title">More Tools</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                  <li class="nav-item active"><a class="nav-link" href="https://me.hsinghhira.me/" target="_blank">Home</a></li>
+                  <script> //<![CDATA[
+                        document.write('<script src=\'https://hshfavlinks.blogspot.com/feeds/posts/default/-/Links?max-results=600&amp;alt=json-in-script&amp;callback=HSH_Widget\'><\/script>');
+                  //]]></script>
+                  </ul>
+      </div>
+      </div>
+      </div>
+      </header>
+      
+
+      <div class="card">
+      <div class="card-content">
+            <form name="pbkdf2form" class="needs-validation" onsubmit="return false" novalidate>
+            <div class="row">
+                  <div class="col-md-6 mb-2">
+                        <div class="input-group">
+                        <span class="input-group-text fw-medium">Restrictions Password Key:</span>
+                        <input class="form-control" type="text" id="validationCustom01" placeholder="FklNcq4P3mJYSNjDFWvv2ei2+uE=" value="FklNcq4P3mJYSNjDFWvv2ei2+uE=" required>
+                        </div>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                        <div class="input-group">
+                        <span class="input-group-text fw-medium">Restrictions Password Salt:</span>
+                        <input class="form-control" type="text" id="validationCustom02" placeholder="aSbUXg==" value="aSbUXg==" required><p id="salt_status"></p>
+                        </div>
+                  </div>
+            </div>
+      
+            <div class="row">
+                  <div class="col-md-3 mb-2">
+                        <div class="input-group">
+                        <span class="input-group-text fw-medium">Starting Passcode:</span>
+                        <input class="form-control" type="number" id="password" placeholder="0000" value="0000" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" required><p id="passcode_status"></p>
+                        </div>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                        <div class="input-group">
+                        <span class="input-group-text fw-medium">Last Passcode:</span>
+                        <input class="form-control" type="number" id="passend" placeholder="9999" value="9999" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" required>
+                        </div>
+                  </div>
+                  <div class="col-md-4 mb-2">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Settings toolbar">
+                              <div class="btn-group me-2 mb-2" role="group" aria-label="Apply settings">
+                                    <button type="submit" class="button btn btn-primary" onclick="find_code()">Start Decording</button>
+                              </div>
+                              <div class="btn-group me-2 mb-2" role="group" aria-label="Apply settings">
+                                    <button type="button" class="button btn btn-primary" onclick="stop_searching()">Stop Decording</button>
+                              </div>
+                              <div class="btn-group me-2 mb-2" role="group" aria-label="Apply settings">
+                                    <button type="button" class="button btn btn-primary" onclick="test_code()">Test Single Code</button>
+                              </div>
+                              
+                        </div>
+                  </div>
+            </div>
+            </form>
+            <div id="status"></div>
+      </div>
+      </div>
+      <center>
+      Made with ❤️️ by <a href="https://me.hsinghhira.me/" target="_blank">Harman Singh Hira</a> in 🇳🇿
+      </center>
+      <script type="text/javascript" src="/main.js"></script>
+      <script type="text/javascript" src="/script.js"></script>
+      <script type="text/javascript" src="/decrypter.js"></script>
+      <script type="text/javascript" src="/min.js"></script>
+      </body></html>
