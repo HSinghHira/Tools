@@ -10,7 +10,7 @@ function dnsLookup() {
     .then(response => response.json())
     .then(data => {
       var dnsResults = document.getElementById("dnsResults");
-      dnsResults.innerHTML = `<div class=container><div class=card style=display:flex!important;margin-top:10px!important;margin-bottom:10px!important><div class=card-content><div class="justify-content-center row"><div class=table-responsive><table class="table table-hover"><tr><th scope=row>IP Address:<td>${data.query}<tr><th scope=row>ISP:<td>${data.isp}<tr><th scope=row>Organization:<td>${data.org}<tr><th scope=row>City:<td>${data.city}<tr><th scope=row>Region:<td>${data.regionName}<tr><th scope=row>Country:<td>${data.country}<tr><th scope=row>Timezone:<td>${data.timezone}</table></div></div></div></div></div>`;
+      dnsResults.innerHTML = `<div class=container><div class=card style=display:flex!important;margin-top:10px!important;margin-bottom:10px!important><div class=card-content><div class="justify-content-center row"><div class=table-responsive><table class="table table-hover"><tr><th scope=row>IP Address:<td>${data.ip}<tr><th scope=row>ISP:<td>${data.isp}<tr><th scope=row>Organization:<td>${data.org}<tr><th scope=row>City:<td>${data.city}<tr><th scope=row>Region:<td>${data.regionName}<tr><th scope=row>Country:<td>${data.country}<tr><th scope=row>Timezone:<td>${data.timezone}</table></div></div></div></div></div>`;
 
       // Shorten URL using shrtco.de API
       var apiUrl = "https://api.shrtco.de/v2/shorten?url=";
