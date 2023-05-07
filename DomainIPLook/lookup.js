@@ -1,1 +1,76 @@
-"use strict";function dnsLookup(){var t=document.getElementById("url").value,e="http://ip-api.com/json/",n=new URLSearchParams(window.location.search).get("dnslookup");e+=n?new URL(n).hostname:new URL(t).hostname,fetch(e).then(t=>t.json()).then(e=>{document.getElementById("dnsResults").innerHTML=`<div class=container><div class=card style=display:flex!important;margin-top:10px!important;margin-bottom:10px!important><div class=card-content><div class="justify-content-center row"><div class=table-responsive><table class="table table-hover"><tr><th scope=row>IP Address:<td>${e.query}<tr><th scope=row>ISP:<td>${e.isp}<tr><th scope=row>Organization:<td>${e.org}<tr><th scope=row>City:<td>${e.city}<tr><th scope=row>Region:<td>${e.regionName}<tr><th scope=row>Country:<td>${e.country}<tr><th scope=row>Timezone:<td>${e.timezone}</table></div></div></div></div></div>`;var o="";o=n||t,fetch("https://api.shrtco.de/v2/shorten?url="+encodeURIComponent(o)).then(t=>t.json()).then(t=>{var e=document.getElementById("shortUrl");t.ok?e.innerHTML=`<div class=container><div class=card style=display:flex!important;margin-top:10px!important><div class=card-content><div class="justify-content-center row"><div class=input-group><span class=input-group-text><i class=ci-document-alt></i></span> <input class=form-control id=maindata required value=${t.result.short_link}> <button class="btn btn-primary"onclick=copyit()>Copy URL</button></div></div></div></div></div>`:e.innerHTML="Error: Unable to shorten URL"}).catch(t=>{document.getElementById("shortUrl").innerHTML="Error: Unable to shorten URL"})}).catch(t=>{document.getElementById("dnsResults").innerHTML="Error: Unable to perform DNS lookup"})}function fetchIPAddress(){fetch("http://ip-api.com/json/").then(t=>t.json()).then(t=>{const e=t.query;document.getElementById("ip-address").textContent=`${e}`}).catch(t=>{console.log("Error fetching IP address:",t),document.getElementById("ip-address").textContent="Error fetching IP address"})}window.onload=fetchIPAddress;
+'use strict';
+/**
+ * @return {undefined}
+ */
+function dnsLookup() {
+  var url = document.getElementById("url").value;
+  /** @type {string} */
+  var newurl = "http://ip-api.com/json/";
+  /** @type {!URLSearchParams} */
+  var newParams = new URLSearchParams(window.location.search);
+  /** @type {(null|string)} */
+  var rootURL = newParams.get("dnslookup");
+  if (rootURL) {
+    /** @type {string} */
+    newurl = newurl + (new URL(rootURL)).hostname;
+  } else {
+    /** @type {string} */
+    newurl = newurl + (new URL(url)).hostname;
+  }
+  fetch(newurl).then((rawResp) => {
+    return rawResp.json();
+  }).then((options) => {
+    /** @type {(Element|null)} */
+    var lnkDiv = document.getElementById("dnsResults");
+    lnkDiv.innerHTML = `<div class=container><div class=card style=display:flex!important;margin-top:10px!important;margin-bottom:10px!important><div class=card-content><div class="justify-content-center row"><div class=table-responsive><table class="table table-hover"><tr><th scope=row>IP Address:<td>${options.query}<tr><th scope=row>ISP:<td>${options.isp}<tr><th scope=row>Organization:<td>${options.org}<tr><th scope=row>City:<td>${options.city}<tr><th scope=row>Region:<td>${options.regionName}<tr><th scope=row>Country:<td>${options.country}<tr><th scope=row>Timezone:<td>${options.timezone}</table></div></div></div></div></div>`;
+    /** @type {string} */
+    var API_URL = "https://api.shrtco.de/v2/shorten?url=";
+    /** @type {string} */
+    var query = "";
+    if (rootURL) {
+      /** @type {string} */
+      query = rootURL;
+    } else {
+      query = url;
+    }
+    fetch(API_URL + encodeURIComponent(query)).then((rawResp) => {
+      return rawResp.json();
+    }).then((batchResponse) => {
+      /** @type {(Element|null)} */
+      var result = document.getElementById("shortUrl");
+      if (batchResponse.ok) {
+        result.innerHTML = `<div class=container><div class=card style=display:flex!important;margin-top:10px!important><div class=card-content><div class="justify-content-center row"><div class=input-group><span class=input-group-text><i class=ci-document-alt></i></span> <input class=form-control id=maindata required value=${batchResponse.result.short_link}> <button class="btn btn-primary"onclick=copyit()>Copy URL</button></div></div></div></div></div>`;
+      } else {
+        /** @type {string} */
+        result.innerHTML = "Error: Unable to shorten URL";
+      }
+    }).catch((canCreateDiscussions) => {
+      /** @type {(Element|null)} */
+      var result = document.getElementById("shortUrl");
+      /** @type {string} */
+      result.innerHTML = "Error: Unable to shorten URL";
+    });
+  }).catch((canCreateDiscussions) => {
+    /** @type {(Element|null)} */
+    var lnkDiv = document.getElementById("dnsResults");
+    /** @type {string} */
+    lnkDiv.innerHTML = "Error: Unable to perform DNS lookup";
+  });
+}
+/**
+ * @return {undefined}
+ */
+function fetchIPAddress() {
+  fetch("http://ip-api.com/json/").then((rawResp) => {
+    return rawResp.json();
+  }).then((ContactEndpoint) => {
+    const TRAVIS_API_JOBS_URL = ContactEndpoint.query;
+    document.getElementById("ip-address").textContent = `${TRAVIS_API_JOBS_URL}`;
+  }).catch((contextReference) => {
+    console.log("Error fetching IP address:", contextReference);
+    /** @type {string} */
+    document.getElementById("ip-address").textContent = "Error fetching IP address";
+  });
+}
+/** @type {function(): undefined} */
+window.onload = fetchIPAddress;
