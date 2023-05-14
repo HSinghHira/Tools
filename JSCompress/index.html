@@ -1,143 +1,166 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="JS Compression Tool" />
-        <title>JS Compression Tool</title>
-        <link rel="apple-touch-icon" sizes="76x76" href="/Favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/Favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/Favicon/favicon-16x16.png">
-	<link rel="manifest" href="/Favicon/site.webmanifest">
-    	<link rel="mask-icon" href="/Favicon/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#da532c">
-    	<meta name="theme-color" content="#ffffff">
-        <link rel="stylesheet" type="text/css" href="/style.css" />
-        <link rel="stylesheet" type="text/css" href="/main.css" />
-	<script type="text/javascript" src="/script.js"></script> 
-        <style>input[type="file"] {display: none;}.alert {padding: 0.70rem 1.125rem!important;height: 45px!important;}</style>
-    </head>
-    <body onload="load()">
-        <header class="navbar navbar-light shadow-sm">
-  <div class="container">
 
-    <!-- Brand -->
-    <a class="navbar-brand d-none d-lg-block order-lg-1" href="#">
-      <i class="fa fa-code mr-1"></i> JS Compressor
-    </a>
-    <a class="navbar-brand d-lg-none me-2" href="#">
-      <i class="fa fa-code mr-1"></i> JS Compressor
-    </a>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="JS Compression Tool" />
+    <title>JS Compression Tool</title>
+    <link rel="apple-touch-icon" sizes="76x76" href="/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Favicon/favicon-16x16.png">
+    <link rel="manifest" href="/Favicon/site.webmanifest">
+    <link rel="mask-icon" href="/Favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <script type="text/javascript" src="/script.js"></script>
+    <style>
+        input[type="file"] {
+            display: none;
+        }
 
-    <!-- Toolbar -->
-    <div class="navbar-toolbar d-flex align-items-center order-lg-3">
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
+        .alert {
+            padding: 0.70rem 1.125rem !important;
+            height: 45px !important;
+        }
+    </style>
+</head>
 
-    <!-- Offcanvas menu -->
-    <div class="offcanvas offcanvas-end me-auto order-lg-2" id="navbarOffcanvas">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title">More Tools</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav">
-          <li class="nav-item active"><a class="nav-link" href="https://me.hsinghhira.me/" target="_blank">Home</a></li>
-          
-          <script> //<![CDATA[
-	document.write('<script src=\'https://hshfavlinks.blogspot.com/feeds/posts/default/-/Links?max-results=600&amp;alt=json-in-script&amp;callback=HSH_Widget\'><\/script>');
-//]]></script>
-        </ul>
-      </div>
-    </div>
-  </div>
-</header>
+<body onload="load()">
+    <header class="navbar navbar-light shadow-sm">
+        <div class="container">
 
-        <input type="hidden" class="use-ecmascript-next" />
-        <ul style="display: none;">
-            <li data-tab="copyPaste" class="tab-nav-item" />
-            <li data-tab="upload" class="tab-nav-item" />
-            <li data-tab="output" class="tab-nav-item" />
-        </ul>
+            <!-- Brand -->
+            <a class="navbar-brand d-none d-lg-block order-lg-1" href="/">
+                <i class="fa fa-code mr-1"></i> JS Compressor
+            </a>
+            <a class="navbar-brand d-lg-none me-2" href="/">
+                <i class="fa fa-code mr-1"></i> JS Compressor
+            </a>
 
-        <div class="card">
-            <div class="card-content">
-                <div class="row justify-content-evenly">
-                    <div class="col">
-                        <div id="copyPaste">
-                            <form name="copyPasteForm">
-                                <textarea name="code" id="maindata" rows="10" class="form-control" placeholder="Code to compress..."></textarea><br/>     
-                <div class="row justify-content-evenly">
-                    <div class="col">                              
-                                <div class="btn-toolbar" role="toolbar" aria-label="Settings toolbar">
-                                    <div class="btn-group me-2 mb-2" role="group" aria-label="Settings group">
-                                        <label class="btn btn-secondary btn-icon btn-lg" title="Load file">
-                                            <input type="file" onchange="loadit()" id="fileToLoad" title="Load file" />
-                                            <i class="ci-folder" style="margin-top: 3px;"></i>
-                                        </label>
-                                        <button type="button" class="btn btn-secondary btn-icon btn-lg" onclick="saveit(outdata.value,'download.js')" title="Save File">
-                                            <i class="ci-download"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-secondary btn-icon btn-lg" onclick="copyit2()" title="Copy">
-                                            <i class="ci-document-alt"></i>
-                                        </button>
-                                    </div>
-                                    <div class="btn-group me-2 mb-2" role="group" aria-label="Apply settings">
-                                        <button class="button btn btn-primary"><i class="ci-check me-2"></i>Apply</button>
-                                    </div>
-                                    <div class="btn-group mb-2" role="group" aria-label="Delete settings">
-                                        <button type="reset" class="btn bg-faded-danger btn-icon" title="Delete">
-                                            <i class="ci-trash text-danger"></i>
-                                        </button>
+            <!-- Toolbar -->
+            <div class="navbar-toolbar d-flex align-items-center order-lg-3">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#navbarOffcanvas">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <!-- Offcanvas menu -->
+            <div class="offcanvas offcanvas-end me-auto order-lg-2" id="navbarOffcanvas">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">More Tools</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav" id="recent-posts-list">
+                        <li class="nav-item active"><a class="nav-link" href="https://me.hsinghhira.me/"
+                                target="_blank">Home</a></li>
+                        <script
+                            src="https://hshfavlinks.blogspot.com/feeds/posts/summary/-/Links?max-results=50&amp;alt=json-in-script&amp;callback=HSH_Widget2"></script>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <input type="hidden" class="use-ecmascript-next" />
+    <ul style="display: none;">
+        <li data-tab="copyPaste" class="tab-nav-item" />
+        <li data-tab="upload" class="tab-nav-item" />
+        <li data-tab="output" class="tab-nav-item" />
+    </ul>
+
+    <div class="card">
+        <div class="card-content">
+            <div class="row justify-content-evenly">
+                <div class="col">
+                    <div id="copyPaste">
+                        <form name="copyPasteForm">
+                            <textarea name="code" id="maindata" rows="10" class="form-control"
+                                placeholder="Code to compress..."></textarea><br />
+                            <div class="row justify-content-evenly">
+                                <div class="col">
+                                    <div class="btn-toolbar" role="toolbar" aria-label="Settings toolbar">
+                                        <div class="btn-group me-2 mb-2" role="group" aria-label="Settings group">
+                                            <label class="btn btn-secondary btn-icon btn-lg" title="Load file">
+                                                <input type="file" onchange="loadit()" id="fileToLoad"
+                                                    title="Load file" />
+                                                <i class="ci-folder" style="margin-top: 3px;"></i>
+                                            </label>
+                                            <button type="button" class="btn btn-secondary btn-icon btn-lg"
+                                                onclick="saveit(outdata.value,'download.js')" title="Save File">
+                                                <i class="ci-download"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-secondary btn-icon btn-lg"
+                                                onclick="copyit2()" title="Copy">
+                                                <i class="ci-document-alt"></i>
+                                            </button>
+                                        </div>
+                                        <div class="btn-group me-2 mb-2" role="group" aria-label="Apply settings">
+                                            <button class="button btn btn-primary"><i
+                                                    class="ci-check me-2"></i>Apply</button>
+                                        </div>
+                                        <div class="btn-group mb-2" role="group" aria-label="Delete settings">
+                                            <button type="reset" class="btn bg-faded-danger btn-icon" title="Delete">
+                                                <i class="ci-trash text-danger"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                        </div>                              
-                         <div class="col"> 
-                           <div class="alert alert-primary d-flex error" role="alert">
-                                <div class="alert-icon">
-                                    <i class="ci-announcement"></i>
+                                <div class="col">
+                                    <div class="alert alert-primary d-flex error" role="alert">
+                                        <div class="alert-icon">
+                                            <i class="ci-announcement"></i>
+                                        </div>
+                                        <output class="error">Enter data to process</output>
+                                    </div>
                                 </div>
-                                <output class="error">Enter data to process</output>
                             </div>
-                           </div>
-                              </div>  
-                            </form>
-                        </div>
+                        </form>
                     </div>
-                    <div class="col">
-                        <div id="output">
-                            <textarea class="output-code form-control" id="outdata" name="code" rows="10" readonly></textarea><br />
-                            <div class="alert alert-primary d-flex" role="alert">
-                                <div class="alert-icon">
-                                    <i class="ci-check-circle"></i>
-                                </div>
-                                <output class="compression">100</output>% Compression and Saving +<output class="saving"></output> KB.
+                </div>
+                <div class="col">
+                    <div id="output">
+                        <textarea class="output-code form-control" id="outdata" name="code" rows="10"
+                            readonly></textarea><br />
+                        <div class="alert alert-primary d-flex" role="alert">
+                            <div class="alert-icon">
+                                <i class="ci-check-circle"></i>
                             </div>
-                            <a class="button download" style="display: none;">Download</a>
+                            <output class="compression">100</output>% Compression and Saving +<output
+                                class="saving"></output> KB.
                         </div>
+                        <a class="button download" style="display: none;">Download</a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div id="upload" style="display: none;">
-          <div class="file-wrapper">
-                <input type="hidden" multiple id="file-input" class="file-input" />
-                <div class="file-list"><input class="button compress" type="hidden" /></div>
-            </div>
+    <div id="upload" style="display: none;">
+        <div class="file-wrapper">
+            <input type="hidden" multiple id="file-input" class="file-input" />
+            <div class="file-list"><input class="button compress" type="hidden" /></div>
         </div>
-    
-        <script src="script.js"></script>
-        <script type="text/javascript" src="https://tools.hsinghhira.me/main.js"></script>
-        <script type="text/javascript" src="https://tools.hsinghhira.me/script.js"></script>
-        <script>function copyit2() { document.getElementById("outdata").select(), document.execCommand("copy");}</script>
-        
-        <center>
-            <p>Made with ❤️️ by <a href="https://me.hsinghhira.me" target="_blank">Harman Singh Hira</a> in 🇳🇿 © <script>document.write(CRYear);</script></p>
-        </center>
-        
-    </body>
+    </div>
+
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://tools.hsinghhira.me/main.js"></script>
+    <script type="text/javascript" src="https://tools.hsinghhira.me/script.js"></script>
+    <script>function copyit2() { document.getElementById("outdata").select(), document.execCommand("copy"); }</script>
+
+    <center>
+        <p>Made with ❤️️ by <a href="https://me.hsinghhira.me" target="_blank">Harman Singh Hira</a> in 🇳🇿 ©
+            <script>document.write(CRYear);</script>
+        </p>
+    </center>
+
+</body>
+
 </html>
