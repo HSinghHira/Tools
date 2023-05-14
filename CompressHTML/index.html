@@ -1,113 +1,261 @@
 <html>
   <head>
-    	<meta charset="UTF-8" />
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="apple-touch-icon" sizes="76x76" href="/Favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/Favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/Favicon/favicon-16x16.png">
-	<link rel="manifest" href="/Favicon/site.webmanifest">
-	<link rel="mask-icon" href="/Favicon/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
-    	<meta name="description" content="Compress HTML" />
-    	<title>Compress HTML</title>
-    	<link rel="stylesheet" href="/main.css" />
-    	<style>input[type="file"] {
-      		display: none;
-      		}
-    	</style>
-    	<script src="/script.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/Favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/Favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/Favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/Favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/Favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Compress HTML" />
+    <title>Compress HTML</title>
+    <link rel="stylesheet" href="/main.css" />
+    <style>
+      input[type="file"] {
+        display: none;
+      }
+    </style>
+    <script src="/script.js"></script>
   </head>
   <body>
-<header class="navbar navbar-light shadow-sm">
-  <div class="container">
+    <header class="navbar navbar-light shadow-sm">
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand d-none d-lg-block order-lg-1" href="#">
+          <i class="fa fa-code mr-1"></i> Compress HTML
+        </a>
+        <a class="navbar-brand d-lg-none me-2" href="#">
+          <i class="fa fa-code mr-1"></i> Compress HTML
+        </a>
 
-    <!-- Brand -->
-    <a class="navbar-brand d-none d-lg-block order-lg-1" href="#">
-      <i class="fa fa-code mr-1"></i> Compress HTML
-    </a>
-    <a class="navbar-brand d-lg-none me-2" href="#">
-      <i class="fa fa-code mr-1"></i> Compress HTML
-    </a>
+        <!-- Toolbar -->
+        <div class="navbar-toolbar d-flex align-items-center order-lg-3">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#navbarOffcanvas"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
 
-    <!-- Toolbar -->
-    <div class="navbar-toolbar d-flex align-items-center order-lg-3">
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
+        <!-- Offcanvas menu -->
+        <div
+          class="offcanvas offcanvas-end me-auto order-lg-2"
+          id="navbarOffcanvas"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">More Tools</h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav" id="recent-posts-list">
+              <li class="nav-item active">
+                <a
+                  class="nav-link"
+                  href="https://me.hsinghhira.me/"
+                  target="_blank"
+                  >Home</a
+                >
+              </li>
 
-    <!-- Offcanvas menu -->
-    <div class="offcanvas offcanvas-end me-auto order-lg-2" id="navbarOffcanvas">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title">More Tools</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              <script src="https://hshfavlinks.blogspot.com/feeds/posts/summary/-/Links?max-results=50&amp;alt=json-in-script&amp;callback=HSH_Widget2"></script>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav" id="recent-posts-list">
-          <li class="nav-item active"><a class="nav-link" href="https://me.hsinghhira.me/" target="_blank">Home</a></li>
-          
-       		<script src="https://hshfavlinks.blogspot.com/feeds/posts/summary/-/Links?max-results=50&amp;alt=json-in-script&amp;callback=HSH_Widget2"></script>
-        </ul>
-      </div>
-    </div>
-  </div>
-</header>
-<div class="card">
-   <div class="card-content">
-      <form>
-         <textarea id="maindata" rows="10" class="form-control" placeholder="HTML Content here" required></textarea>
-         <br />
-         <div class="form-check form-switch">
-            <input type="checkbox" class="form-check-input" id="headstatus" value="true">
-            <label class="form-check-label" for="customSwitch1">Don&#39;t compress HTML head of document</label>
-         </div>
-         <br />
-         <center>
-            <div class="btn-toolbar" role="toolbar" aria-label="Settings toolbar">
-               <div class="btn-group me-2 mb-2" role="group" aria-label="Settings group">
-                  <label class="btn btn-secondary btn-icon"  title="Load file">
-                  <input type="file" onchange="loadit()" id="fileToLoad" title="Load file"/>
-                  <i class="ci-folder" style="margin-top:3px;"></i>
-                  </label>
-                  <div class="btn-group" role="group">
-                     <button type="button" class="btn btn-secondary btn-icon" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     <i class="ci-download"></i>
-                     </button>
-                     <div class="dropdown-menu">
-                        <a href="#"  onclick="saveit(maindata.value,'download.txt')" class="dropdown-item">Save as Text File</a>
-                        <a href="#"  onclick="saveit(maindata.value,'download.html')" class="dropdown-item">Save as HTML File</a>
-                     </div>
+    </header>
+    <div class="container">
+      <div class="card">
+        <div class="card-content">
+          <div class="row justify-content-center">
+            <form>
+              <textarea
+                id="maindata"
+                rows="10"
+                class="form-control"
+                placeholder="HTML Content here"
+                required
+              ></textarea>
+              <br />
+              <div class="form-check form-switch">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="headstatus"
+                  value="true"
+                />
+                <label class="form-check-label" for="customSwitch1"
+                  >Don&#39;t compress HTML head of document</label
+                >
+              </div>
+              <br />
+              <center>
+                <div
+                  class="btn-toolbar"
+                  role="toolbar"
+                  aria-label="Settings toolbar"
+                >
+                  <div
+                    class="btn-group me-2 mb-2"
+                    role="group"
+                    aria-label="Settings group"
+                  >
+                    <label class="btn btn-secondary btn-icon" title="Load file">
+                      <input
+                        type="file"
+                        onchange="loadit()"
+                        id="fileToLoad"
+                        title="Load file"
+                      />
+                      <i class="ci-folder" style="margin-top: 3px"></i>
+                    </label>
+                    <div class="btn-group" role="group">
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-icon"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <i class="ci-download"></i>
+                      </button>
+                      <div class="dropdown-menu">
+                        <a
+                          href="#"
+                          onclick="saveit(maindata.value,'download.txt')"
+                          class="dropdown-item"
+                          >Save as Text File</a
+                        >
+                        <a
+                          href="#"
+                          onclick="saveit(maindata.value,'download.html')"
+                          class="dropdown-item"
+                          >Save as HTML File</a
+                        >
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-secondary btn-icon"
+                      onclick="copyit()"
+                      title="Copy"
+                    >
+                      <i class="ci-document-alt"></i>
+                    </button>
                   </div>
-                  <button type="button" class="btn btn-secondary btn-icon" onclick="copyit()" title="Copy">
-                  <i class="ci-document-alt"></i>
-                  </button>
-               </div>
-               <div class="btn-group me-2 mb-2" role="group" aria-label="Apply settings">
-                  <button type="button" class="btn btn-primary" id="HTMLcompressor">
-                  <i class="ci-check me-2"></i>Apply
-                  </button>
-               </div>
-               <div class="btn-group mb-2" role="group" aria-label="Delete settings">
-                  <button type="reset" class="btn bg-faded-danger btn-icon" title="Delete">
-                  <i class="ci-trash text-danger"></i>
-                  </button>
-               </div>
-            </div>
-         </center>
-      </form>
-   </div>
-</div>
+                  <div
+                    class="btn-group me-2 mb-2"
+                    role="group"
+                    aria-label="Apply settings"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      id="HTMLcompressor"
+                    >
+                      <i class="ci-check me-2"></i>Apply
+                    </button>
+                  </div>
+                  <div
+                    class="btn-group mb-2"
+                    role="group"
+                    aria-label="Delete settings"
+                  >
+                    <button
+                      type="reset"
+                      class="btn bg-faded-danger btn-icon"
+                      title="Delete"
+                    >
+                      <i class="ci-trash text-danger"></i>
+                    </button>
+                  </div>
+                </div>
+              </center>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <center>
-         Made with ❤️️ by <a href="https://me.hsinghhira.me" target="_blank">Harman Singh Hira</a> in 🇳🇿
-      </center>
+      Made with ❤️️ by
+      <a href="https://me.hsinghhira.me" target="_blank">Harman Singh Hira</a>
+      in 🇳🇿
+    </center>
     <script async="" type="text/javascript">
-document.getElementById("HTMLcompressor").addEventListener("click",function(){var allHTML=document.getElementById("maindata").value;var headHTML="";var removeThis="";var headstatus=document.getElementById("headstatus").checked;if(headstatus!=true){allHTML=allHTML.replace(/(\r\n|\n|\r|\t)/gm,"");allHTML=allHTML.replace(/\s+/g," ");}else{allHTML=allHTML.replace(new RegExp("</HEAD","gi"),'</head');allHTML=allHTML.replace(new RegExp("</head ","gi"),'</head');var bodySplit="</head>";var i=allHTML.indexOf(bodySplit)!=-1;if(i==true){var bodySplit="</head>";tempo=allHTML.split(new RegExp(bodySplit,'i'));headHTML=tempo[0];allHTML=tempo[1];}else{bodySplit="";}
-allHTML=allHTML.replace(/(\r\n|\n|\r|\t)/gm,"");allHTML=allHTML.replace(/\s+/g," ");allHTML=headHTML+bodySplit+'\n'+allHTML;}
-document.getElementById("maindata").value=allHTML;});document.getElementById("clearText").addEventListener("click",function(){document.getElementById("maindata").value="";document.getElementById("maindata").value="";document.getElementById("maindata").focus();});var textBox=document.getElementById("maindata");textBox.onfocus=function(){textBox.select();textBox.onmouseup=function(){textBox.onmouseup=null;return false;};};
-</script>
+      document
+        .getElementById("HTMLcompressor")
+        .addEventListener("click", function () {
+          var allHTML = document.getElementById("maindata").value;
+          var headHTML = "";
+          var removeThis = "";
+          var headstatus = document.getElementById("headstatus").checked;
+          if (headstatus != true) {
+            allHTML = allHTML.replace(/(\r\n|\n|\r|\t)/gm, "");
+            allHTML = allHTML.replace(/\s+/g, " ");
+          } else {
+            allHTML = allHTML.replace(new RegExp("</HEAD", "gi"), "</head");
+            allHTML = allHTML.replace(new RegExp("</head ", "gi"), "</head");
+            var bodySplit = "</head>";
+            var i = allHTML.indexOf(bodySplit) != -1;
+            if (i == true) {
+              var bodySplit = "</head>";
+              tempo = allHTML.split(new RegExp(bodySplit, "i"));
+              headHTML = tempo[0];
+              allHTML = tempo[1];
+            } else {
+              bodySplit = "";
+            }
+            allHTML = allHTML.replace(/(\r\n|\n|\r|\t)/gm, "");
+            allHTML = allHTML.replace(/\s+/g, " ");
+            allHTML = headHTML + bodySplit + "\n" + allHTML;
+          }
+          document.getElementById("maindata").value = allHTML;
+        });
+      document
+        .getElementById("clearText")
+        .addEventListener("click", function () {
+          document.getElementById("maindata").value = "";
+          document.getElementById("maindata").value = "";
+          document.getElementById("maindata").focus();
+        });
+      var textBox = document.getElementById("maindata");
+      textBox.onfocus = function () {
+        textBox.select();
+        textBox.onmouseup = function () {
+          textBox.onmouseup = null;
+          return false;
+        };
+      };
+    </script>
     <script type="text/javascript" src="/main.js"></script>
-	<script type="text/javascript" src="/script.js"></script>
+    <script type="text/javascript" src="/script.js"></script>
   </body>
 </html>
