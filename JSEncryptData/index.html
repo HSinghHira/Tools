@@ -1,192 +1,219 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-      	<link rel="apple-touch-icon" sizes="76x76" href="/Favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/Favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/Favicon/favicon-16x16.png">
-	<link rel="manifest" href="/Favicon/site.webmanifest">
-	<link rel="mask-icon" href="/Favicon/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Protect your Data with JS" />
-        <title>JS Encryption Tool</title>
-        <link rel="stylesheet" type="text/css" href="/style.css" />	    
-        <link rel="stylesheet" type="text/css" href="/main.css" />
-        <script type="text/javascript" src="/JSEncryptData/script.js"></script>
-        <script type="text/javascript" src="/JSEncryptData/main.js"></script>
-	<script type="text/javascript" src="/script.js"></script> 
-        <style>
-            .tab-content>.active {
-    display: grid;
-            }
-        </style>
-    </head>
 
-    <body onload="load()">
-   <header class="navbar navbar-light shadow-sm">
-  <div class="container">
+<head>
+    <link rel="apple-touch-icon" sizes="76x76" href="/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Favicon/favicon-16x16.png">
+    <link rel="manifest" href="/Favicon/site.webmanifest">
+    <link rel="mask-icon" href="/Favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Protect your Data with JS" />
+    <title>JS Encryption Tool</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <script type="text/javascript" src="/JSEncryptData/script.js"></script>
+    <script type="text/javascript" src="/JSEncryptData/main.js"></script>
+    <script type="text/javascript" src="/script.js"></script>
+    <style>
+        .tab-content>.active {
+            display: grid;
+        }
+    </style>
+</head>
 
-    <!-- Brand -->
-    <a class="navbar-brand d-none d-lg-block order-lg-1" href="#">
-      <i class="fa fa-code mr-1"></i> Protect Data with JS
-    </a>
-    <a class="navbar-brand d-lg-none me-2" href="#">
-      <i class="fa fa-code mr-1"></i> Protect Data with JS
-    </a>
+<body onload="load()">
+    <header class="navbar navbar-light shadow-sm">
+        <div class="container">
 
-    <!-- Toolbar -->
-    <div class="navbar-toolbar d-flex align-items-center order-lg-3">
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <!-- Brand -->
+            <a class="navbar-brand d-none d-lg-block order-lg-1" href="/">
+                <i class="fa fa-code mr-1"></i> Protect Data with JS
+            </a>
+            <a class="navbar-brand d-lg-none me-2" href="/">
+                <i class="fa fa-code mr-1"></i> Protect Data with JS
+            </a>
+
+            <!-- Toolbar -->
+            <div class="navbar-toolbar d-flex align-items-center order-lg-3">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#navbarOffcanvas">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <!-- Offcanvas menu -->
+            <div class="offcanvas offcanvas-end me-auto order-lg-2" id="navbarOffcanvas">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">More Tools</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav" id="recent-posts-list">
+                        <li class="nav-item active"><a class="nav-link" href="https://me.hsinghhira.me/"
+                                target="_blank">Home</a></li>
+                        <script
+                            src="https://hshfavlinks.blogspot.com/feeds/posts/summary/-/Links?max-results=50&amp;alt=json-in-script&amp;callback=HSH_Widget2"></script>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="card" style="display: flex!important;">
+            <div class="card-content">
+                <!-- Media tabs: Icon -->
+                <ul class="nav nav-tabs media-tabs nav-justified" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#step1" data-bs-toggle="tab" role="tab">
+                            <div class="d-flex align-items-center">
+                                <div class="media-tab-media"><i class="ci-locked"></i></div>
+                                <div class="ps-3">
+                                    <div class="media-tab-subtitle text-muted fs-xs mb-1">First Step</div>
+                                    <h6 class="media-tab-title text-nowrap mb-0">Enter Key</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#step2" data-bs-toggle="tab" role="tab">
+                            <div class="d-flex align-items-center">
+                                <div class="media-tab-media"><i class="ci-wallet"></i></div>
+                                <div class="ps-3">
+                                    <div class="media-tab-subtitle text-muted fs-xs mb-1">Second step</div>
+                                    <h6 class="media-tab-title text-nowrap mb-0">Your Data</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#step3" onclick="encryptFormText();" data-bs-toggle="tab" role="tab">
+                            <div class="d-flex align-items-center">
+                                <div class="media-tab-media"><i class="ci-package"></i></div>
+                                <div class="ps-3">
+                                    <div class="media-tab-subtitle text-muted fs-xs mb-1">Third step</div>
+                                    <h6 class="media-tab-title text-nowrap mb-0">HTML Codes</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#step4" data-bs-toggle="tab" role="tab">
+                            <div class="d-flex align-items-center">
+                                <div class="media-tab-media"><i class="ci-check"></i></div>
+                                <div class="ps-3">
+                                    <div class="media-tab-subtitle text-muted fs-xs mb-1">Fourth step</div>
+                                    <h6 class="media-tab-title text-nowrap mb-0">Result</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-
-    <!-- Offcanvas menu -->
-    <div class="offcanvas offcanvas-end me-auto order-lg-2" id="navbarOffcanvas">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title">More Tools</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav">
-          <li class="nav-item active"><a class="nav-link" href="https://me.hsinghhira.me/" target="_blank">Home</a></li>
-          
-          <script> //<![CDATA[
-	document.write('<script src=\'https://hshfavlinks.blogspot.com/feeds/posts/default/-/Links?max-results=600&amp;alt=json-in-script&amp;callback=HSH_Widget\'><\/script>');
-//]]></script>
-        </ul>
-      </div>
-    </div>
-  </div>
-</header>
-   <div class="card">
-      <div class="card-content">
-         <!-- Media tabs: Icon -->
-         <ul class="nav nav-tabs media-tabs nav-justified" role="tablist">
-            <li class="nav-item">
-               <a class="nav-link active" href="#step1" data-bs-toggle="tab" role="tab">
-                  <div class="d-flex align-items-center">
-                     <div class="media-tab-media"><i class="ci-locked"></i></div>
-                     <div class="ps-3">
-                        <div class="media-tab-subtitle text-muted fs-xs mb-1">First Step</div>
-                        <h6 class="media-tab-title text-nowrap mb-0">Enter Key</h6>
-                     </div>
-                  </div>
-               </a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link " href="#step2" data-bs-toggle="tab" role="tab">
-                  <div class="d-flex align-items-center">
-                     <div class="media-tab-media"><i class="ci-wallet"></i></div>
-                     <div class="ps-3">
-                        <div class="media-tab-subtitle text-muted fs-xs mb-1">Second step</div>
-                        <h6 class="media-tab-title text-nowrap mb-0">Your Data</h6>
-                     </div>
-                  </div>
-               </a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="#step3"  onclick="encryptFormText();" data-bs-toggle="tab" role="tab">
-                  <div class="d-flex align-items-center">
-                     <div class="media-tab-media"><i class="ci-package"></i></div>
-                     <div class="ps-3">
-                        <div class="media-tab-subtitle text-muted fs-xs mb-1">Third step</div>
-                        <h6 class="media-tab-title text-nowrap mb-0">HTML Codes</h6>
-                     </div>
-                  </div>
-               </a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="#step4" data-bs-toggle="tab" role="tab">
-                  <div class="d-flex align-items-center">
-                     <div class="media-tab-media"><i class="ci-check"></i></div>
-                     <div class="ps-3">
-                        <div class="media-tab-subtitle text-muted fs-xs mb-1">Fourth step</div>
-                        <h6 class="media-tab-title text-nowrap mb-0">Result</h6>
-                     </div>
-                  </div>
-               </a>
-            </li>
-         </ul>
-      </div>
-   </div>
-   <div class="tab-content">
-      <div class="tab-pane fade show active" id="step1" role="tabpanel">
-         <div class="card">
-            <div class="card-content">
-               <form name="key" action="#" onsubmit="return false;">
-                  <p>Enter the Key (Password) to unlock the protected data.</p>
-                  <div class="input-group">
-                     <span class="input-group-text">
-                     <i class="ci-locked"></i>
-                     </span>
-                     <input class="form-control"  name="text" id="passwordText">
-		     <button type="button" class="btn btn-secondary btn-icon" onclick="copyit2()" title="Copy"><i class="ci-document-alt"></i></button>
-                     <button class="btn btn-primary" type="button" onclick="document.key.text.value = randomPassword(8);">Random</button>
-                  </div>
-               </form>
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="step1" role="tabpanel">
+            <div class="container">
+                <div class="card" style="display: flex!important;">
+                    <div class="card-content">
+                        <form name="key" action="#" onsubmit="return false;">
+                            <p>Enter the Key (Password) to unlock the protected data.</p>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="ci-locked"></i>
+                                </span>
+                                <input class="form-control" name="text" id="passwordText">
+                                <button type="button" class="btn btn-secondary btn-icon" onclick="copyit2()"
+                                    title="Copy"><i class="ci-document-alt"></i></button>
+                                <button class="btn btn-primary" type="button"
+                                    onclick="document.key.text.value = randomPassword(8);">Random</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="tab-pane fade show" id="step2" role="tabpanel">
-         <div class="card">
-            <div class="card-content">
-               <form name="plain" action="#" onsubmit="return false;">
-                  <p>Enter the Text below that you wanted to protect &amp; proceed to next step.</p>
-                  <textarea class="form-control" name="text" style="height:250px" id="plainText"></textarea>
-               </form>
+        </div>
+        <div class="tab-pane fade show" id="step2" role="tabpanel">
+            <div class="container">
+                <div class="card" style="display: flex!important;">
+                    <div class="card-content">
+                        <form name="plain" action="#" onsubmit="return false;">
+                            <p>Enter the Text below that you wanted to protect &amp; proceed to next step.</p>
+                            <textarea class="form-control" name="text" style="height:250px" id="plainText"></textarea>
+                        </form>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="tab-pane fade show" id="step3" role="tabpanel">
-         <form name="encryptedCode" action="#" onsubmit="return false;" style="display: grid;">
-            <div class="card">
-               <div class="card-content">        
-                  <b>Select Style:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="radio" name="codeType" value="hide" checked onclick="genSampleCode();" /> Standard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="codeType" value="show" onclick="genSampleCode();" /> Inline&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="codeType" value="show" onclick="genSampleCode();" /> ***
-               </div>
-            </div>
-            <div class="card">
-               <div class="card-content">
-                  <p>Copy below HTML Codes and paste whereever you want to use it</p>
-                  <pre class="line-numbers"><code class="lang-html"><textarea class="form-control" name="text" id="codeText" wrap="off" readonly="" onclick="this.focus(); this.select();" style="border: 0px;height:100px;background: #f5f2f0;"></textarea></code></pre>
-               </div>
-            </div>
-         </form>
-         <div class="card">
-            <div class="card-content">
-               <p>Place below codes between the <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code> tags.</p>
-               <pre class="line-numbers">
+        </div>
+        <div class="tab-pane fade show" id="step3" role="tabpanel">
+            <form name="encryptedCode" action="#" onsubmit="return false;" style="display: grid;">
+                <div class="container">
+                    <div class="card" style="display: flex!important;">
+                        <div class="card-content">
+                            <b>Select Style:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="radio" name="codeType"
+                                value="hide" checked onclick="genSampleCode();" /> Standard
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="codeType" value="show"
+                                onclick="genSampleCode();" /> Inline&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio"
+                                name="codeType" value="show" onclick="genSampleCode();" /> ***
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card" style="display: flex!important;">
+                        <div class="card-content">
+                            <p>Copy below HTML Codes and paste whereever you want to use it</p>
+                            <pre
+                                class="line-numbers"><code class="lang-html"><textarea class="form-control" name="text" id="codeText" wrap="off" readonly="" onclick="this.focus(); this.select();" style="border: 0px;height:100px;background: #f5f2f0;"></textarea></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="container">
+                <div class="card" style="display: flex!important;">
+                    <div class="card-content">
+                        <p>Place below codes between the <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code> tags.
+                        </p>
+                        <pre class="line-numbers">
 <code class="lang-html">&lt;script type=&quot;text/javascript&quot; src=&quot;https://tools.hsinghhira.me/JSEncryptData/script.js&quot;&gt;&lt;/script&gt;</code>
 </pre>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="tab-pane fade show" id="step4" role="tabpanel">
-         <div class="card">
-            <div class="card-content">
-                <p><b>The Result</b></p>
-               <div id="encryptedTest" style="border: 1px solid #dae1e7;padding: 20px 20px;border-radius: .3125rem;">&nbsp;</div>
-               <br/>
-               <form name="cipher" action="#" onsubmit="return false;">
-                  <div class="input-group">
-                     <span class="input-group-text">
-                     <i class="ci-key"></i> &nbsp;&nbsp;<b>Cipher Key:</b>
-                     </span>
-                     <input type="text" class="form-control"  name="text"  id="cipherText">
-                  </div>
-               </form>
+        </div>
+        <div class="tab-pane fade show" id="step4" role="tabpanel">
+            <div class="container">
+                <div class="card" style="display: flex!important;">
+                    <div class="card-content">
+                        <p><b>The Result</b></p>
+                        <div id="encryptedTest"
+                            style="border: 1px solid #dae1e7;padding: 20px 20px;border-radius: .3125rem;">&nbsp;</div>
+                        <br />
+                        <form name="cipher" action="#" onsubmit="return false;">
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="ci-key"></i> &nbsp;&nbsp;<b>Cipher Key:</b>
+                                </span>
+                                <input type="text" class="form-control" name="text" id="cipherText">
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-   </div>
-   <center>
-      <p>Made with ❤️️ by <a href="https://me.hsinghhira.me" target="_blank">Harman Singh Hira</a> in 🇳🇿</p>
-   </center>
-   	<script type="text/javascript" src="/main.js"></script>
-	<script type="text/javascript" src="/script.js"></script>
-	<script>function copyit2() {document.getElementById("passwordText").select(), document.execCommand("copy")}</script>
+        </div>
+    </div>
+    <center>
+        <p>Made with ❤️️ by <a href="https://me.hsinghhira.me" target="_blank">Harman Singh Hira</a> in 🇳🇿</p>
+    </center>
+    <script type="text/javascript" src="/main.js"></script>
+    <script type="text/javascript" src="/script.js"></script>
+    <script>function copyit2() { document.getElementById("passwordText").select(), document.execCommand("copy") }</script>
 </body>
+
 </html>
