@@ -1,0 +1,129 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Github Releases Stats" />
+    <title>Github Releases Stats</title>
+    <link rel="apple-touch-icon" sizes="76x76" href="/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Favicon/favicon-16x16.png">
+    <link rel="manifest" href="/Favicon/site.webmanifest">
+    <link rel="mask-icon" href="/Favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+    <script type="text/javascript" src="/script.js"></script>
+    <style>
+        input[type="file"]{ display: none;} .alert{ padding: 0.70rem 1.125rem !important; height: 45px !important;}
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function html2entities(){ var t=/[<>"'&]/g; for (i=0; i < arguments.length; i++) arguments[i].value=arguments[i].value.replace(t, function (t){ return replacechar(t);});} function replacechar(t){ return "<"==t ? "&lt;" : ">"==t ? "&gt;" : '"'==t ? "&quot;" : "'"==t ? "&#039;" : "&"==t ? "&amp;" : void 0;} function countit(t){ (formcontent=t.form.charcount.value), (t.form.displaycount.value=formcontent.length);}
+    </script>
+    <header class="navbar navbar-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-none d-lg-block order-lg-1" href="/">
+                <i class="fa fa-code mr-1"></i> Github Releases Stats
+            </a>
+            <a class="navbar-brand d-lg-none me-2" href="/">
+                <i class="fa fa-code mr-1"></i> Github Releases Stats
+            </a>
+            <div class="navbar-toolbar d-flex align-items-center order-lg-3">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#navbarOffcanvas">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="offcanvas offcanvas-end me-auto order-lg-2" id="navbarOffcanvas">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">More Tools</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav" id="recent-posts-list">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/" target="_blank">Home</a>
+                        </li>
+                        <script
+                            src="https://hshfavlinks.blogspot.com/feeds/posts/summary/-/Links?max-results=50&amp;alt=json-in-script&amp;callback=HSH_Widget2"></script>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="container">
+                <div class="card border-0 shadow" style="display: flex !important">
+                    <div class="card-content">
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="username" type="text" placeholder="Your name" required>
+                            <label for="fl-text">Github Username or URL</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="repository" list="datalist-options" type="text"
+                                placeholder="Your name" required>
+                            <label for="fl-text">Select Repository Name</label>
+                            <datalist id="datalist-options">
+                            </datalist>
+                        </div>
+
+
+                        <div class="btn-toolbar" role="toolbar" aria-label="Settings toolbar"
+                            style="align-content: center;">
+                            <div class="btn-group me-2 mb-2" role="group" aria-label="Apply settings">
+                                <button type="submit" class="btn btn-primary" id="get-stats-button"
+                                    onclick="getStats()">
+                                    <span id="unloader-gif"><i class="ci-check me-2"></i></span>
+                                    <span id="loader-gif" class="spinner-border spinner-border-sm me-2" role="status"
+                                        aria-hidden="true"></span>Fetch Data
+                                </button>
+
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Searched Repos
+                                    </button>
+                                    <div class="dropdown-menu" id="search-history"></div>
+                                </div>
+
+                            </div>
+
+                            <div class="btn-group mb-2" role="group" aria-label="Delete settings">
+                                <button onclick="window.location.href = '/';" class="btn bg-faded-danger btn-icon"
+                                    title="Delete">
+                                    <i class="ci-trash text-danger"></i>
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="stats-result">
+            </div>
+        </div>
+    </div>
+    <!-- ENDIF FORM SUBMITTED -->
+
+    <footer style="padding: 20px;justify-content: center;text-align: center;">
+        Made with ❤️️ by <a href="https://me.hsinghhira.me/" target="_blank">Harman Singh Hira</a> in 🇳🇿
+    </footer>
+    <script type="text/javascript" src="/main.js"></script>
+    <script type="text/javascript" src="/script.js"></script>
+    <script type="text/javascript" src="/min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="/this.js"></script>
+</body>
+
+</html>
