@@ -16,8 +16,10 @@
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <link rel="stylesheet" type="text/css" href="/main.css" />
     <script type="text/javascript" src="/script.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
-        input[type="file"]{ display: none;} .alert{ padding: 0.70rem 1.125rem !important; height: 45px !important;}
+       input[type="file"]{ display: none} .alert{ padding: 0.70rem 1.125rem !important; height: 45px !important}.bx{ font-size: 20px;}
     </style>
 </head>
 
@@ -90,19 +92,24 @@
                                 <div class="btn-group" role="group">
                                     <button type="button" class="btn btn-outline-secondary dropdown-toggle"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="ci-document-alt"></i>
+                                        <i class='bx bx-history'></i>
                                     </button>
                                     <div class="dropdown-menu" id="search-history"></div>
                                 </div>
 
                             </div>
 
-                            <div class="btn-group mb-2" role="group" aria-label="Delete settings">
+                            <div class="btn-group me-2 mb-2" role="group" aria-label="Delete settings">
                                 <button onclick="window.location.href = '/';" class="btn bg-faded-danger btn-icon"
                                     title="Delete">
                                     <i class="ci-trash text-danger"></i>
                                 </button>
                             </div>
+                            <div class="btn-group mb-2" role="group" aria-label="Apply settings">
+                                <button type="button" class="btn bg-faded btn-secondary btn-icon" data-bs-toggle="modal" data-bs-target="#modalDefault">
+                                    <i class='bx bx-cookie'></i>
+                                  </button>
+                              </div>
                         </div>
 
 
@@ -114,8 +121,30 @@
             </div>
         </div>
     </div>
-    <!-- ENDIF FORM SUBMITTED -->
 
+    <!-- Modal markup -->
+<div class="modal fade" id="modalDefault" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Cookies Info.</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fs-sm">
+            We use cookies to store your searched history in your browser. We do not store any of your data in our servers, etc. We do not serve targeted ads or anything like that. 
+          </p><p class="fs-sm">This is free to use static webpage without any ad or anything. Trying to serve the community. That's all :P</p>
+          <p class="fs-sm">If you still want to delete the cookies data then you can do it by hitting below button.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" onclick="deleteData()">Delete Cookies</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   
     <footer style="padding: 20px;justify-content: center;text-align: center;">
         Made with ❤️️ by <a href="https://me.hsinghhira.me/" target="_blank">Harman Singh Hira</a> in 🇳🇿
     </footer>
