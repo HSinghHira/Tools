@@ -19,13 +19,43 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
-       input[type="file"]{ display: none} .alert{ padding: 0.70rem 1.125rem !important; height: 45px !important}.bx{ font-size: 20px;}
+        input[type="file"] {
+            display: none
+        }
+
+        .alert {
+            padding: 0.70rem 1.125rem !important;
+            height: 45px !important
+        }
+
+        .bx {
+            font-size: 20px;
+        }
+    </style>
+    <style>
+        .list ul {
+            list-style: none;
+        }
+
+        .list {
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .list-items {
+            padding: 10px 5px;
+        }
+
+        .list-items:hover {
+            background-color: #dddddd;
+        }
     </style>
 </head>
 
 <body>
     <script type="text/javascript">
-        function html2entities(){ var t=/[<>"'&]/g; for (i=0; i < arguments.length; i++) arguments[i].value=arguments[i].value.replace(t, function (t){ return replacechar(t);});} function replacechar(t){ return "<"==t ? "&lt;" : ">"==t ? "&gt;" : '"'==t ? "&quot;" : "'"==t ? "&#039;" : "&"==t ? "&amp;" : void 0;} function countit(t){ (formcontent=t.form.charcount.value), (t.form.displaycount.value=formcontent.length);}
+        function html2entities() { var t = /[<>"'&]/g; for (i = 0; i < arguments.length; i++) arguments[i].value = arguments[i].value.replace(t, function (t) { return replacechar(t); }); } function replacechar(t) { return "<" == t ? "&lt;" : ">" == t ? "&gt;" : '"' == t ? "&quot;" : "'" == t ? "&#039;" : "&" == t ? "&amp;" : void 0; } function countit(t) { (formcontent = t.form.charcount.value), (t.form.displaycount.value = formcontent.length); }
     </script>
     <header class="navbar navbar-light shadow-sm">
         <div class="container">
@@ -65,23 +95,23 @@
                 <div class="card border-0 shadow" style="display: flex !important">
                     <div class="card-content">
 
-                        <div class="form-floating mb-3">
+                        <div class="form-floating mb-3 textbox completeIt">
                             <input class="form-control" id="username" type="text" placeholder="Your name" required>
                             <label for="fl-text">Github Username or URL</label>
+                            <ul class="list" id="suggestions-list" style="list-style: none;margin-block-start: 0;margin-block-end: 0;margin-inline-start: 0px;margin-inline-end: 0px;padding-inline-start: 0;"></ul>
                         </div>
 
                         <div class="form-floating mb-3">
                             <input class="form-control" id="repository" list="datalist-options" type="text"
                                 placeholder="Your name" required>
                             <label for="fl-text">Select Repository Name</label>
-                            <datalist id="datalist-options">
-                            </datalist>
+                            <datalist id="datalist-options"></datalist>
                         </div>
 
 
                         <div class="btn-toolbar" role="toolbar" aria-label="Settings toolbar"
                             style="align-content: center;">
-                            <div class="btn-group me-2 mb-2" role="group" aria-label="Apply settings">
+                            <div class="btn-group me-2" role="group" aria-label="Apply settings">
                                 <button type="submit" class="btn btn-primary" id="get-stats-button"
                                     onclick="getStats()">
                                     <span id="unloader-gif"><i class="ci-check me-2"></i></span>
@@ -99,17 +129,18 @@
 
                             </div>
 
-                            <div class="btn-group me-2 mb-2" role="group" aria-label="Delete settings">
-                                <button onclick="window.location.href = '/';" class="btn bg-faded-danger btn-icon"
+                            <div class="btn-group me-2" role="group" aria-label="Delete settings">
+                                <button onclick="window.location.href = '/GithubReleasesStats/';" class="btn bg-faded-danger btn-icon"
                                     title="Delete">
                                     <i class="ci-trash text-danger"></i>
                                 </button>
                             </div>
-                            <div class="btn-group mb-2" role="group" aria-label="Apply settings">
-                                <button type="button" class="btn bg-faded btn-secondary btn-icon" data-bs-toggle="modal" data-bs-target="#modalDefault">
+                            <div class="btn-group" role="group" aria-label="Apply settings">
+                                <button type="button" class="btn bg-faded btn-secondary btn-icon" data-bs-toggle="modal"
+                                    data-bs-target="#modalDefault">
                                     <i class='bx bx-cookie'></i>
-                                  </button>
-                              </div>
+                                </button>
+                            </div>
                         </div>
 
 
@@ -123,28 +154,33 @@
     </div>
 
     <!-- Modal markup -->
-<div class="modal fade" id="modalDefault" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Cookies Info.</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal fade" id="modalDefault" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cookies Info.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="fs-sm">
+                        We use cookies to store your searched history in your browser. We do not store any of your data
+                        in our servers, etc. We do not serve targeted ads or anything like that.
+                    </p>
+                    <p class="fs-sm">This is free to use static webpage without any ad or anything. Trying to serve the
+                        community. That's all :P</p>
+                    <p class="fs-sm">If you still want to delete the cookies data then you can do it by hitting below
+                        button.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal"
+                        onclick="deleteData()">Delete Cookies</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <p class="fs-sm">
-            We use cookies to store your searched history in your browser. We do not store any of your data in our servers, etc. We do not serve targeted ads or anything like that. 
-          </p><p class="fs-sm">This is free to use static webpage without any ad or anything. Trying to serve the community. That's all :P</p>
-          <p class="fs-sm">If you still want to delete the cookies data then you can do it by hitting below button.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal" onclick="deleteData()">Delete Cookies</button>
-        </div>
-      </div>
     </div>
-  </div>
 
-   
+
     <footer style="padding: 20px;justify-content: center;text-align: center;">
         Made with ❤️️ by <a href="https://me.hsinghhira.me/" target="_blank">Harman Singh Hira</a> in 🇳🇿
     </footer>
@@ -152,7 +188,7 @@
     <script type="text/javascript" src="/script.js"></script>
     <script type="text/javascript" src="/min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script type="text/javascript" src="/GithubReleasesStats/this.js"></script>
+    <script type="text/javascript" src="GithubReleasesStats/this.js"></script>
 </body>
 
 </html>
