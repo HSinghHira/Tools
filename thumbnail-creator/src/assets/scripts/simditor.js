@@ -2559,7 +2559,7 @@ Simditor = (function(superClass) {
   Simditor.prototype.opts = {
     textarea: null,
     placeholder: '',
-    defaultImage: 'images/image.png',
+    defaultImage: 'src/assets/images/image.png',
     params: {},
     upload: false,
     indentWidth: 40
