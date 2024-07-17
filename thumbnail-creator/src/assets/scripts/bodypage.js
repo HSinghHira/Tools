@@ -11,7 +11,7 @@
       textarea: $('#input_post_title'),
       toolbar: toolbar,
       pasteImage: true,
-      defaultImage: 'assets/images/image.png',
+      defaultImage: 'image.png',
       upload:false
     });
     $preview = $('#post_title');
